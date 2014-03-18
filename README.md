@@ -1,21 +1,27 @@
-# UCIMLRepo
-
 UCI Machine Learning Repository
 ===============================
 
-A package for julia to allow easy access and download of datasets from UCI ML repositories
+A Julia package for UCI ML repositories
 -----------------------------------------------------------------------
 
 UC Irvine Machine Learning Repository is one the most popular collection of datasets that are avalaible for free. 
 
 This Package provides functions for the user to easily download from the website directly into a DataFrame. 
-Additionaly, another function allows the user can also view the accompanying metadata about the dataset.
+
+Additionaly, another function allows the user to view the accompanying metadata about the dataset.
 
 ## Installation
 
 ```julia
 julia> Pkg.Clone("git://github.com/siddhantjain/UCIMLRepo.jl.git")
 ```
+
+## Exported Functions
+
+Two functions are available
+
+	1. UCIRepoData("DataSetName")
+	2. UCIRepoInfo("DataSetName")
 
 ## Basic Examples
 
