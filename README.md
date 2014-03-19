@@ -51,6 +51,7 @@ As before the exact link may be mentioned for more information on the dataset
 ```julia
 using UCIMLRepo
 UCIRepoInfor("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names", false)
+```
 
 ## TO DO
 
@@ -60,7 +61,7 @@ UCIRepoInfor("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris
 
 * Better error handling routines
 
-* <strike>Allow for user to enter the url of the dataset</strike>
+* ~~Allow for user to enter the url of the dataset~~
 
  
 
