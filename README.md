@@ -13,8 +13,9 @@ Additionaly, another function allows the user to view the accompanying metadata 
 ## Installation
 
 ```julia
-julia> Pkg.Clone("git://github.com/siddhantjain/UCIMLRepo.jl.git")
+julia> Pkg.clone("git://github.com/siddhantjain/UCIMLRepo.jl.git")
 ```
+note: There are some errors that have been reported so far when trying to run this package on a windows machine. This space will be updated as and when the errors are cleared for windows machine
 
 ## Exported Functions
 
