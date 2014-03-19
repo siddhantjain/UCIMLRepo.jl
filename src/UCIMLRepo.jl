@@ -4,7 +4,7 @@ using HTTPClient.HTTPC
 using DataArrays
 using DataFrames
 
-export UCIRepoData,UCIRepoInfo 
+export ucirepodata,ucirepoinfo 
 
 
 function download_http(url::ASCIIString)
@@ -25,7 +25,8 @@ function parse_rcvd_data(rcvd_data::ASCIIString)
     
     for i = 1:size(rows)[1]
         df[i] = split(rows[i],',',true)	
-    end		
+    end
+    df		
 end
 
 #TODO: Use readtable("file.csv") instead of splitting the array.

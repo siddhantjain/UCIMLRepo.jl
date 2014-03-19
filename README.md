@@ -21,8 +21,8 @@ note: There are some errors that have been reported so far when trying to run th
 
 Two functions are available
 
-	1. UCIRepoData("DataSetName")
-	2. UCIRepoInfo("DataSetName")
+	1. ucirepodata("DataSetName")
+	2. uciRepoinfo("DataSetName")
 
 ## Basic Examples
 
@@ -37,7 +37,7 @@ Alternatively, you may mention the exact link of the dataset to be loaded. There
 
 ```julia
 using UCIMLRepo
-df = UCIRepoData("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data",false) 
+df = ucirepodata("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data",false) 
 ```
 
 ### Fetching information on the dataset
@@ -46,19 +46,19 @@ print on STDOUT all the relevant information regarding the dataset
 
 ```julia
 using UCIMLRepo
-UCIRepoInfo("iris") 
+ucirepoinfo("iris") 
 ```
 As before the exact link may be mentioned for more information on the dataset
 ```julia
-using UCIMLRepo
-UCIRepoInfor("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names", false)
+using ucimlrepo
+ucirepoinfo("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names", false)
 ```
 
 ## TO DO
 
-* Add functionality to parse the output from UCIRepoInfo and automatically name the attributes in the DataFrame
+* Add functionality to parse the output from ucirepoinfo and automatically name the attributes in the DataFrame
 
-* Add functionality to have a seperate datatype for each attribute in the dataset based on the output from UCIRepoInfo
+* Add functionality to have a seperate datatype for each attribute in the dataset based on the output from ucirepoinfo
 
 * Better error handling routines
 
