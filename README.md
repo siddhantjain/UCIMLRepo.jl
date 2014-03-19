@@ -32,6 +32,13 @@ using UCIMLRepo
 df = UCIRepoData("iris") 
 ```
 
+Alternatively, you may mention the exact link of the dataset to be loaded. There is an optional argument that you need to set to false to do so.
+
+```julia
+using UCIMLRepo
+df = UCIRepoData("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.data",false) 
+```
+
 ### Fetching information on the dataset
 
 print on STDOUT all the relevant information regarding the dataset 
@@ -40,6 +47,10 @@ print on STDOUT all the relevant information regarding the dataset
 using UCIMLRepo
 UCIRepoInfo("iris") 
 ```
+As before the exact link may be mentioned for more information on the dataset
+```julia
+using UCIMLRepo
+UCIRepoInfor("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names", false)
 
 ## TO DO
 
@@ -49,7 +60,9 @@ UCIRepoInfo("iris")
 
 * Better error handling routines
 
-* Allow for user to enter the url of the dataset
+* <strike>Allow for user to enter the url of the dataset</strike>
+
+ 
 
 
 
