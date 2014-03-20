@@ -36,7 +36,7 @@ function parse_rcvd_info(rcvd_info::ASCIIString)
     rows = split(rcvd_info,'\n',false)
 	
     for i = 1:size(rows)[1]
-    println(rows[i])	
+        println(rows[i])	
     end
 end
 #TODO: used the parsed info to create the header line for the dataframe
@@ -71,11 +71,11 @@ end
 
 function ucirepoinfo(DsetNameOrUrl::ASCIIString, DorU::Bool=true)
     if(DorU)
-#creating the url to be used for download	
-    url = string("http://archive.ics.uci.edu/ml/machine-learning-databases/", DsetNameOrUrl,"/",DsetNameOrUrl,".names")
+	#creating the url to be used for download	
+        url = string("http://archive.ics.uci.edu/ml/machine-learning-databases/", DsetNameOrUrl,"/",DsetNameOrUrl,".names")
 	
     else
-    url = DsetNameOrUrl
+        url = DsetNameOrUrl
     end
 	
 #loading received data into a string type variable 
