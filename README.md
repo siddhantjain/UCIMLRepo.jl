@@ -8,7 +8,7 @@ UC Irvine Machine Learning Repository is one the most popular collection of data
 
 This Package provides functions for the user to easily download from the website directly into a DataFrame. 
 
-Additionaly, another function allows the user to view the accompanying metadata about the dataset.
+Additionally, another function allows the user to view the accompanying metadata about the dataset.
 
 ## Installation
 
@@ -22,7 +22,7 @@ note: There are some errors that have been reported so far when trying to run th
 Two functions are available
 
 	1. ucirepodata("DataSetName")
-	2. uciRepoinfo("DataSetName")
+	2. ucirepoinfo("DataSetName")
 
 ## Basic Examples
 
@@ -30,7 +30,7 @@ Obtain a DataFrame with the entire iris data set
 
 ```julia
 using UCIMLRepo
-df = UCIRepoData("iris") 
+df = ucirepodata("iris") 
 ```
 
 Alternatively, you may mention the exact link of the dataset to be loaded. There is an optional argument that you need to set to false to do so.
