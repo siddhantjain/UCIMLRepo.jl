@@ -94,8 +94,7 @@ end
 #need to work on parsing the html data rcvd to extract a list of available datasets
 
 function ucirepolist()
-    url = """http://archive.ics.uci.edu/ml/datasets.html"""
-    doc = lh.parse(url)
+    doc = lh.parse("http://archive.ics.uci.edu/ml/datasets.html")
     text = doc[:xpath]("/html//table[2]//table[2]")
     rows = text[2][:xpath]("/html//table[2]//table[2]//tr[1]")
     i =2;
