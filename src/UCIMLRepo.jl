@@ -3,8 +3,11 @@ module UCIMLRepo
 using HTTPClient.HTTPC
 using DataArrays
 using DataFrames
+using PyCall
 
-export ucirepodata,ucirepoinfo 
+@pyimport lxml.html as lh
+
+export ucirepodata,ucirepoinfo,ucirepolist 
 
 
 function download_http(url::ASCIIString)
@@ -85,15 +88,34 @@ function ucirepoinfo(DsetNameOrUrl::ASCIIString, DorU::Bool=true)
     parse_rcvd_info(rcvd_info)
 end
 
+
 #displays a list of all the available datasets.
 #work in progress. Function not exported yet.
 #need to work on parsing the html data rcvd to extract a list of available datasets
 
 function ucirepolist()
-    url = "http://archive.ics.uci.edu/ml/datasets.html?format=&task=&att=&area=&numAtt=&numIns=&type=&sort=nameUp&view=list"
-    rcvd_list = download_http(url)
-    fo = open("list.md","w") 
-    print(fo,rcvd_list)
+    url = """http://archive.ics.uci.edu/ml/datasets.html"""
+    doc = lh.parse(url)
+    text = doc[:xpath]("/html//table[2]//table[2]")
+    rows = text[2][:xpath]("/html//table[2]//table[2]//tr[1]")
+    i =2;
+    	
+    	
+    print("name|default task\n") 				
+    while i<= 284                                                                       
+	 
+         name 			= rows[1][:xpath](string("""/html//table[2]//td[2]/table[2]//tr[""",i,"""]//td[2]/p//text()"""))[1]
+         dtype 			= rows[1][:xpath](string("""/html//table[2]//td[2]/table[2]//tr[""",i,"""]//td[2]/p//text()"""))[2]
+         #dtask[i-1] 		= rows[1][:xpath](string("""/html//table[2]//td[2]/table[2]//tr[""",i,"""]//td[3]/p//text()"""))
+         #atypes[i-1] 		= rows[1][:xpath](string("""/html//table[2]//td[2]/table[2]//tr[""",i,"""]//td[4]/p//text()"""))
+         #instances[i-1] 	= rows[1][:xpath](string("""/html//table[2]//td[2]/table[2]//tr[""",i,"""]//td[5]/p//text()"""))
+         #attributes[i-1] 	= rows[1][:xpath](string("""/html//table[2]//td[2]/table[2]//tr[""",i,"""]//td[6]/p//text()"""))
+         #year[i-1] 		= rows[1][:xpath](string("""/html//table[2]//td[2]/table[2]//tr[""",i,"""]//td[7]/p//text()"""))
+	
+	 print(name," | ", dtype,"\n")	
+	 i += 1
+    end
+
 end
 
 end # module

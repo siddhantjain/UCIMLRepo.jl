@@ -23,6 +23,7 @@ Two functions are available
 
 	1. ucirepodata("DataSetName")
 	2. ucirepoinfo("DataSetName")
+	3. ucirepolist()
 
 ## Basic Examples
 
@@ -49,9 +50,19 @@ using UCIMLRepo
 ucirepoinfo("iris") 
 ```
 As before the exact link may be mentioned for more information on the dataset
+
 ```julia
-using ucimlrepo
+using UCIMLRepo
 ucirepoinfo("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.names", false)
+```
+
+### Fetching list of all datasets and default task
+
+The package also displays all the packages that are available at the UCI ML repositories. For this end, a simple function as follows can be used
+
+```julia
+using UCIMLRepo
+ucirepolist()
 ```
 
 ## TO DO
@@ -64,6 +75,7 @@ ucirepoinfo("http://archive.ics.uci.edu/ml/machine-learning-databases/iris/iris.
 
 * ~~Allow for user to enter the url of the dataset~~
 
+* Improve speed of ucirepolist
  
 
 
